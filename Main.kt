@@ -1,12 +1,12 @@
 package machine
 
-class coffeeMachine {
+class coffeeMachine (initWater: Int, initMilkMl: Int, initCoffeeBeans: Int, initCups: Int, initMoney: Int){
 
-    var waterMl = 400
-    var milkMl = 540
-    var coffeeBeans = 120
-    var cups = 9
-    var money = 550
+    var waterMl = initWater
+    var milkMl = initMilkMl
+    var coffeeBeans = initCoffeeBeans
+    var cups = initCups
+    var money = initMoney
 
     inner class drink(water: Int, milk: Int, beans: Int, cost: Int) {
         private val water1 = water
@@ -89,7 +89,8 @@ class coffeeMachine {
     init {
         var loop = 1
         while(loop == 1) {
-            println("Write action (buy, fill, take, remaining, exit)")
+            println("Write action (buy, fill, take, remaining, exit):")
+            print("> ")
             val action = readln()
             println(" ")
             when (action) {
@@ -103,7 +104,6 @@ class coffeeMachine {
     }
 
 }
-
 fun main() {
-    coffeeMachine()
+    coffeeMachine(400, 540, 120, 9, 550)
 }
